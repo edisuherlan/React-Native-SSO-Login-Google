@@ -43,7 +43,6 @@ Fokus utama proyek ini adalah menunjukkan **praktik terbaik** untuk:
 - [Konfigurasi Firebase](#-konfigurasi-firebase)
 - [Cara Kerja Sesi 14 Hari](#-cara-kerja-sesi-14-hari)
 - [Keamanan](#-keamanan)
-- [Dokumentasi Lengkap](#-dokumentasi-lengkap)
 - [Pembuat](#-pembuat)
 - [Lisensi](#-lisensi)
 
@@ -135,11 +134,7 @@ sso-google/
 │   └── app/
 │       ├── google-services.json          # (diabaikan git — rahasia)
 │       └── google-services.example.json  # template konfigurasi
-├── docs/                        # Dokumentasi lengkap
-│   ├── PRD.md                   # Product Requirements Document
-│   ├── TDD.md                   # Technical Design Document
-│   ├── SETUP.md                 # Panduan setup langkah demi langkah
-│   ├── FIRESTORE_RULES.md       # Dokumentasi security rules
+├── docs/
 │   └── Screenshoot/             # Tangkapan layar aplikasi
 ├── src/
 │   ├── auth/                    # authStore (Zustand), googleAuth, session
@@ -207,8 +202,6 @@ File `android/app/google-services.json` **sengaja tidak di-commit** demi keamana
 6. Buat **Cloud Firestore** (mode production) dan pasang rules dari [`firestore.rules`](firestore.rules).
 7. Salin **Web client ID** (client_type 3) ke `src/config/constants.ts` pada `GOOGLE_WEB_CLIENT_ID`.
 
-📄 Panduan detail ada di **[docs/SETUP.md](docs/SETUP.md)**.
-
 ---
 
 ## ⏳ Cara Kerja Sesi 14 Hari
@@ -235,17 +228,6 @@ export const SLIDING_REFRESH_THRESHOLD_MS = 60 * 60 * 1000;
 - 🚫 **Tanpa password** — autentikasi sepenuhnya lewat Google, tidak ada kata sandi yang disimpan.
 - 📜 **Firestore Rules** — akses koleksi `users` dibatasi hanya untuk pemilik `uid` yang terautentikasi.
 - 🙈 **Rahasia tidak di-commit** — `google-services.json` & sejenisnya diabaikan melalui `.gitignore`.
-
----
-
-## 📚 Dokumentasi Lengkap
-
-| Dokumen | Deskripsi |
-| --- | --- |
-| [PRD.md](docs/PRD.md) | Product Requirements Document — tujuan, ruang lingkup, kebutuhan |
-| [TDD.md](docs/TDD.md) | Technical Design Document — arsitektur & detail implementasi |
-| [SETUP.md](docs/SETUP.md) | Panduan setup lengkap langkah demi langkah |
-| [FIRESTORE_RULES.md](docs/FIRESTORE_RULES.md) | Penjelasan & kode security rules Firestore |
 
 ---
 

@@ -72,6 +72,12 @@ ios/**/GoogleService-Info.plist
 .env
 *.env.local
 
+# Dokumen internal (tidak dipublish)
+docs/PRD.md
+docs/TDD.md
+docs/SETUP.md
+docs/FIRESTORE_RULES.md
+
 # Yarn
 .yarn/*
 !.yarn/patches
